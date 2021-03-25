@@ -1,7 +1,7 @@
 package Java;
 
 /**
- * @see <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/">https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/</a>
+ * @see <a href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/"></a>
  * 82. 删除排序链表中的重复元素 II
  * 此题目很简单，但是要注意边界值处理
  */
