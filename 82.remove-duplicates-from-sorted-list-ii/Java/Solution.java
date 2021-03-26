@@ -105,9 +105,9 @@ class Solution82 {
         // ListNode result = q82.deleteDuplicates(listNode1);
         // System.out.println(result);
 
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(1);
-        ListNode listNode3 = new ListNode(2);
+        ListNode listNode1 = new ListNode("listNode1",1);
+        ListNode listNode2 = new ListNode("listNode2",1);
+        ListNode listNode3 = new ListNode("listNode3",2);
         listNode1.next = listNode2;
         listNode2.next = listNode3;
         ListNode result = q82.deleteDuplicates(listNode1);
@@ -118,23 +118,28 @@ class Solution82 {
 
 
 class ListNode {
+    String name;
     int val;
     ListNode next;
 
-    ListNode() {
-    }
-
-    ListNode(int val) {
+    ListNode(String name,int val) {
+        this.name = name;
         this.val = val;
     }
 
-    ListNode(int val, ListNode next) {
-        this.val = val;
-        this.next = next;
-    }
 
     @Override
     public String toString() {
-        return "<" + val + ">";
+        StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("<").append(name).append(":").append(val).append(">");
+        ListNode thatNext = next;
+        if(thatNext!=null){
+            stringBuffer.append("===");
+        }
+        while (thatNext != null) {
+            stringBuffer.append("<").append(thatNext.name).append(":").append(thatNext.val).append(">");
+            thatNext = thatNext.next;
+        }
+        return stringBuffer.toString();
     }
 }

@@ -29,28 +29,30 @@ class Solution83 {
                         break;
                     }
                 }
-                //这里脱出有两种情况，一是链表到头了，或者是遇到了不同的值，但是这两种情况的处理是一样的
-                beforeNode.next = currentNode;
+                if (beforeNode.val == currentNode.val) {
+                    beforeNode.next = currentNode.next;
+                }else{
+                    beforeNode.next = currentNode;
+                    beforeNode = currentNode;
+                }
                 currentNode = currentNode.next;
-            } else {
-                //非重复，就往后走一个节点
+            }else{
                 beforeNode = currentNode;
                 currentNode = currentNode.next;
             }
         }
         return head;
-
     }
 
     public static void main(String[] s) throws Exception {
         Solution83 q82 = new Solution83();
-        // ListNode listNode1=new ListNode(1);
-        // ListNode listNode2=new ListNode(2);
-        // ListNode listNode3=new ListNode(3);
-        // ListNode listNode4=new ListNode(3);
-        // ListNode listNode5=new ListNode(4);
-        // ListNode listNode6=new ListNode(4);
-        // ListNode listNode7=new ListNode(5);
+        // ListNode listNode1=new ListNode("listNode1",1);
+        // ListNode listNode2=new ListNode("listNode2",2);
+        // ListNode listNode3=new ListNode("listNode3",3);
+        // ListNode listNode4=new ListNode("listNode4",3);
+        // ListNode listNode5=new ListNode("listNode5",4);
+        // ListNode listNode6=new ListNode("listNode6",4);
+        // ListNode listNode7=new ListNode("listNode7",5);
         // listNode1.next=listNode2;
         // listNode2.next=listNode3;
         // listNode3.next=listNode4;
@@ -58,26 +60,29 @@ class Solution83 {
         // listNode5.next=listNode6;
         // listNode6.next=listNode7;
         // ListNode result = q82.deleteDuplicates(listNode1);
-        // System.out.println(result);
 
-        // ListNode listNode1=new ListNode(1);
-        // ListNode listNode2=new ListNode(1);
-        // ListNode listNode3=new ListNode(1);
-        // ListNode listNode4=new ListNode(2);
-        // ListNode listNode5=new ListNode(3);
-        // listNode1.next=listNode2;
-        // listNode2.next=listNode3;
-        // listNode3.next=listNode4;
-        // listNode4.next=listNode5;
+        // ListNode listNode1 = new ListNode("listNode1",1);
+        // ListNode listNode2 = new ListNode("listNode2",1);
+        // ListNode listNode3 = new ListNode("listNode3",1);
+        // ListNode listNode4 = new ListNode("listNode4",2);
+        // ListNode listNode5 = new ListNode("listNode5",3);
+        // listNode1.next = listNode2;
+        // listNode2.next = listNode3;
+        // listNode3.next = listNode4;
+        // listNode4.next = listNode5;
         // ListNode result = q82.deleteDuplicates(listNode1);
-        // System.out.println(result);
 
-        ListNode listNode1 = new ListNode(1);
-        ListNode listNode2 = new ListNode(1);
-        ListNode listNode3 = new ListNode(2);
+        ListNode listNode1 = new ListNode("listNode1", 1);
+        ListNode listNode2 = new ListNode("listNode2", 1);
+        ListNode listNode3 = new ListNode("listNode3", 2);
+        ListNode listNode4 = new ListNode("listNode4", 2);
+        ListNode listNode5 = new ListNode("listNode5", 2);
         listNode1.next = listNode2;
         listNode2.next = listNode3;
+        listNode3.next = listNode4;
+        listNode4.next = listNode5;
         ListNode result = q82.deleteDuplicates(listNode1);
+
         System.out.println(result);
 
     }
