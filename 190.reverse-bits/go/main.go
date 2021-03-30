@@ -15,6 +15,7 @@ import "fmt"
 
 func reverseBits(num uint32) uint32 {
     var ret, i uint32 = 0, 1
+	// 遍历num的高位1，不用遍历32次
 	for num > 0 {
 		ret |= (num & 0x80000000) >> (32 - i)
 		num <<= 1
