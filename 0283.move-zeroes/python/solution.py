@@ -3,8 +3,8 @@
 https://leetcode-cn.com/problems/move-zeroes/
 
 p代表处理好的数组位置，q遍历数组，遇到非0和p交换。交换有两种情况：
-(1) nums[p]==0, nums[q]!=0
-(2) nums[p]==nums[q]!=0,原地拷贝
+(1) nums[p]==0, nums[q]!=0，有效交换
+(2) nums[p]==nums[q]!=0，无效交换
 
 另外一种比较好理解思路是，遍历非0的元素往数组头部填充，然后对数组尾部补0。
 https://leetcode-cn.com/problems/move-zeroes/solution/dong-hua-yan-shi-283yi-dong-ling-by-wang_ni_ma/
